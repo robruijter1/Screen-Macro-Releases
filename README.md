@@ -52,4 +52,4 @@ After launching the app for the first time:
    - Either way, continue adding your game's screens, capture marker images, and draw action regions.
 2. Open the **Scenario Editor** tab to create the automation sequences you want to run.
 3. Go to the **Configs** tab and click **Save current** to save your setup as a named config (useful for backups or sharing).
-4. Switch to the **Bot** tab and click **Start** to run.
+4. Switch to the **Start** tab and click **Start** to run.
