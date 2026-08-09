@@ -53,3 +53,6 @@ After launching the app for the first time:
 2. Open the **Scenario Editor** tab to create the automation sequences you want to run.
 3. Go to the **Configs** tab and click **Save current** to save your setup as a named config (useful for backups or sharing).
 4. Switch to the **Start** tab and click **Start** to run.
+
+For a full worked example — three screens, a couple of clickable actions, and the
+scenario that ties them together — see [TUTORIAL.md](TUTORIAL.md).
