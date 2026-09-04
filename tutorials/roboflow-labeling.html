@@ -142,12 +142,32 @@
     width: 100%;
     height: auto;
     border-radius: 7px;
+    cursor: zoom-in;
   }
   figcaption {
     font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     color: var(--muted);
     padding: 10px 4px 2px;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+    cursor: zoom-out;
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox img {
+    max-width: 96vw;
+    max-height: 96vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 
   .divider {
@@ -249,5 +269,26 @@
 
   <footer>Screen Macro &middot; Labeling provider setup</footer>
 </main>
+
+<div id="lightbox" class="lightbox" hidden>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+<script>
+(function () {
+  var overlay = document.getElementById('lightbox');
+  var overlayImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('figure img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      overlayImg.src = img.src;
+      overlayImg.alt = img.alt;
+      overlay.hidden = false;
+    });
+  });
+  overlay.addEventListener('click', function () { overlay.hidden = true; });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') overlay.hidden = true;
+  });
+})();
+</script>
 </body>
 </html>
